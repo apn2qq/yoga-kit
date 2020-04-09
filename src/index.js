@@ -5,7 +5,7 @@ import { Button } from "components/button"
 import "assets/styles/main.scss"
 
 function App() {
-  return <Button>Button</Button>
+  return <Button>Я обычная кнопка</Button>
 }
 
 ReactDOM.render(
