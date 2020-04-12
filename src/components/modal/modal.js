@@ -1,23 +1,50 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 // import clsx from "clsx"
 
 import styles from "./modal.module.scss"
 
-// TODO: useOnClickOutide
-// TODO: Open handler, close handler
-// TODO: Cross icon
-// TODO: Calculate gap for scrollbar
 // TODO: Amimate on appearing/disappearing
 
-export function Modal({ children, visible, handleCloseClick, handleOpenClick, ...props }) {
+export function Modal({ children, open, handleCloseClick, handleOpenClick, ...props }) {
+  // Prevent scroll when modal window is open
+  useEffect(() => {
+    const body = document.querySelector("body")
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth
+
+    if (open) {
+      const scrollY = window.scrollY
+      body.setAttribute(
+        "style",
+        `overflow-y: hidden; position: fixed; top: -${scrollY}px; padding-right: ${scrollBarWidth}px`
+      )
+    }
+
+    if (!open) {
+      const scrollY = body.style.top
+      if (scrollY !== "") {
+        body.style.overflowY = null
+        body.style.position = null
+        body.style.top = null
+        body.style.paddingRight = null
+        window.scrollTo(0, parseInt(scrollY || "0") * -1)
+      }
+    }
+  }, [open])
+
   return (
-    <dialog className={styles.modal} {...props}>
-      <div className={styles.inner}>{children}</div>
-    </dialog>
+    open && (
+      <aside className={styles.modal} {...props} open={open}>
+        <div className={styles.inner}>{children}</div>
+        <div className={styles.backdrop} onClick={handleCloseClick}></div>
+      </aside>
+    )
   )
 }
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
+  open: PropTypes.bool.isRequired,
+  handleCloseClick: PropTypes.func.isRequired,
+  handleOpenClick: PropTypes.func.isRequired,
 }
