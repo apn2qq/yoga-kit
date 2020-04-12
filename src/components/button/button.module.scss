@@ -3,13 +3,14 @@
   border: 0;
   border-radius: var(--border-radius-base);
   color: #fff;
-  font-size: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   font-family: var(--font-family-primary);
+  font-weight: 400;
 
-  min-height: 40px;
+  min-height: 32px;
 
   transition-duration: 0.35s;
   transition-property: opacity;
@@ -29,17 +30,10 @@
 }
 
 .huge {
-  display: block;
-  width: 100%;
-  font-size: 20px;
+  padding-left: 56px;
+  padding-right: 56px;
+  font-size: 16px;
   min-height: 56px;
-}
-
-.small {
-  min-height: 32px;
-  font-size: 14px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
 .disabled {
