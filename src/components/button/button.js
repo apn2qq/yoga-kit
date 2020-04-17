@@ -1,23 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-import clsx from "clsx"
-
-import styles from "./button.module.scss"
+import styled from "styled-components/macro"
 
 export function Button({ children, disabled, name, type, value, loading, size, ...props }) {
   return (
-    <button
-      className={clsx(styles.button, {
-        [styles.disabled]: disabled,
-        [styles.huge]: size === "huge",
-      })}
-      {...{ disabled, name, type, value, loading }}
-      {...props}
-    >
+    <StyledButton {...{ disabled, name, type, value, loading }} {...props}>
       {children}
-    </button>
+    </StyledButton>
   )
 }
+
+const StyledButton = styled.button`
+  border-radius: 5px;
+  background-color: ${(props) => props.backgroundColor};
+`
 
 Button.propTypes = {
   children: PropTypes.node,

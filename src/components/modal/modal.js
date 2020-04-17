@@ -1,10 +1,5 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-// import clsx from "clsx"
-
-import styles from "./modal.module.scss"
-
-// TODO: Amimate on appearing/disappearing
 
 export function Modal({ children, open, handleCloseClick, handleOpenClick, ...props }) {
   // Prevent scroll when modal window is open
@@ -34,9 +29,9 @@ export function Modal({ children, open, handleCloseClick, handleOpenClick, ...pr
 
   return (
     open && (
-      <aside className={styles.modal} {...props} open={open}>
-        <div className={styles.inner}>{children}</div>
-        <div className={styles.backdrop} onClick={handleCloseClick}></div>
+      <aside open={open} {...props}>
+        <div>{children}</div>
+        <div onClick={handleCloseClick}></div>
       </aside>
     )
   )
