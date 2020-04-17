@@ -1,19 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components/macro"
 
-export function Button({ children, disabled, name, type, value, loading, size, ...props }) {
+import { StyledButton } from "./button.styled"
+
+export function Button({ children, disabled, name, type, value, loading, size, ...rest }) {
   return (
-    <StyledButton {...{ disabled, name, type, value, loading }} {...props}>
+    <StyledButton
+      disabled={disabled}
+      name={name}
+      type={type}
+      value={value}
+      loading={loading}
+      size={size}
+      {...rest}
+    >
       {children}
     </StyledButton>
   )
 }
-
-const StyledButton = styled.button`
-  border-radius: 5px;
-  background-color: ${(props) => props.backgroundColor};
-`
 
 Button.propTypes = {
   children: PropTypes.node,
