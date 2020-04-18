@@ -1,0 +1,28 @@
+import React from "react"
+import { withKnobs, text, select } from "@storybook/addon-knobs"
+
+import { Input } from "src/components/input"
+
+export function Basic() {
+  const skinSelector = {
+    label: "Skin",
+    options: {
+      primary: "primary",
+      outline: "outline",
+    },
+    defaultValue: "primary",
+  }
+
+  return (
+    <Input
+      type="text"
+      skin={select(skinSelector.label, skinSelector.options, skinSelector.defaultValue)}
+      placeholder={text("Placeholder", "Type your e-mail")}
+    ></Input>
+  )
+}
+
+export default {
+  title: "Input",
+  decorators: [withKnobs],
+}

@@ -1,15 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-export function Input({ children, open, handleCloseClick, handleOpenClick, ...props }) {
+import { StyledInput } from "./input.styled"
+
+export function Input({ skin = "primary", type, placeholder, name, id, transparent, ...rest }) {
   return (
-    <aside open={open} {...props}>
-      <div>{children}</div>
-      <div onClick={handleCloseClick}></div>
-    </aside>
+    <StyledInput
+      skin={skin}
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      id={id}
+      transparent={transparent}
+      {...rest}
+    ></StyledInput>
   )
 }
 
 Input.propTypes = {
-  children: PropTypes.node.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  name: PropTypes.string,
+  id: PropTypes.string,
 }
