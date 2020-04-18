@@ -10,6 +10,22 @@ export const StyledButton = styled.button`
     cursor: pointer;
   }
 
+  &:focus,
+  &:active {
+    outline-color: currentcolor;
+  }
+
+  ${({ disabled, theme }) =>
+    disabled &&
+    css`
+      background-color: ${theme.colors.grey.grey5};
+      color: ${theme.colors.grey.grey2};
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    `}
+
   ${({ size }) =>
     size === "small" &&
     css`

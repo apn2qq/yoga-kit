@@ -1,9 +1,9 @@
 import React from "react"
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs"
 
-import { Button as ButtonComponent } from "src/components/button"
+import { Button } from "src/components/button"
 
-export function Button() {
+export function Basic() {
   const colorSelector = {
     label: "Size",
     options: {
@@ -14,16 +14,16 @@ export function Button() {
   }
 
   return (
-    <ButtonComponent
+    <Button
       size={select(colorSelector.label, colorSelector.options, colorSelector.defaultValue)}
       disabled={boolean("Disabled", false)}
     >
       {text("Label", "Push me please")}
-    </ButtonComponent>
+    </Button>
   )
 }
 
 export default {
-  title: "Components",
+  title: "Button",
   decorators: [withKnobs],
 }
