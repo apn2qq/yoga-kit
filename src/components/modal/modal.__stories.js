@@ -1,7 +1,7 @@
 import React from "react"
 import { withKnobs } from "@storybook/addon-knobs"
 
-import { Modal as ModalComponent } from "components/modal"
+import { Modal as ModalComponent } from "src/components/modal"
 
 export function Modal() {
   return (
