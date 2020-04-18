@@ -1,21 +1,23 @@
 import React from "react"
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs"
-import { action } from "@storybook/addon-actions"
 
-import { Button as ButtonComponent } from "components/button"
+import { Button as ButtonComponent } from "src/components/button"
 
 export function Button() {
-  const label = "Size"
-  const options = {
-    default: null,
-    huge: "huge",
+  const colorSelector = {
+    label: "Size",
+    options: {
+      Small: "small",
+      Big: "big",
+    },
+    defaultValue: "small",
   }
-  const defaultValue = "default"
-
-  const value = select(label, options, defaultValue)
 
   return (
-    <ButtonComponent onClick={action("clicked")} disabled={boolean("Disabled", false)} size={value}>
+    <ButtonComponent
+      size={select(colorSelector.label, colorSelector.options, colorSelector.defaultValue)}
+      disabled={boolean("Disabled", false)}
+    >
       {text("Label", "Push me please")}
     </ButtonComponent>
   )

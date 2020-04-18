@@ -1,21 +1,24 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { ThemeProvider } from "styled-components"
-import { theme } from "assets/styles/theme"
 
-import { GlobalStyle } from "assets/styles/global"
-import { Button } from "components/button"
+import { theme } from "src/assets/styles/theme"
+import { GlobalStyle } from "src/assets/styles/global"
+
+import { Button } from "src/components/button"
 
 function App() {
-  return <Button size="small">Testove button</Button>
+  return <Button size="big">Testove button</Button>
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <React.Fragment>
       <GlobalStyle></GlobalStyle>
-      <App></App>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <App></App>
+      </ThemeProvider>
+    </React.Fragment>
   </React.StrictMode>,
   document.getElementById("root")
 )
