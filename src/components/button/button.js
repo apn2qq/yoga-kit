@@ -3,24 +3,35 @@ import PropTypes from "prop-types"
 
 import { StyledButton } from "./button.styled"
 
-export function Button({ children, disabled, name, type, value, loading, size, ...rest }) {
+export function Button({
+  skin = "primary",
+  size = "small",
+  label,
+  disabled,
+  name,
+  type,
+  value,
+  loading,
+  ...rest
+}) {
   return (
     <StyledButton
+      size={size}
+      skin={skin}
       disabled={disabled}
       name={name}
       type={type}
       value={value}
       loading={loading}
-      size={size}
       {...rest}
     >
-      {children}
+      {label}
     </StyledButton>
   )
 }
 
 Button.propTypes = {
-  children: PropTypes.node,
+  label: PropTypes.string,
   disabled: PropTypes.bool,
   name: PropTypes.string,
   type: PropTypes.string,
