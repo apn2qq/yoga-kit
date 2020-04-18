@@ -8,7 +8,6 @@ export function Button() {
   const label = "Size"
   const options = {
     default: null,
-    small: "small",
     huge: "huge",
   }
   const defaultValue = "default"

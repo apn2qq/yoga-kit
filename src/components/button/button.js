@@ -1,23 +1,21 @@
 import React from "react"
 import PropTypes from "prop-types"
-import clsx from "clsx"
 
-import styles from "./button.module.scss"
+import { StyledButton } from "./button.styled"
 
-export function Button({ children, disabled, name, type, value, loading, size, ...props }) {
-  console.log(disabled)
+export function Button({ children, disabled, name, type, value, loading, size, ...rest }) {
   return (
-    <button
-      className={clsx(styles.button, {
-        [styles.disabled]: disabled,
-        [styles.small]: size === "small",
-        [styles.huge]: size === "huge",
-      })}
-      {...{ disabled, name, type, value, loading }}
-      {...props}
+    <StyledButton
+      disabled={disabled}
+      name={name}
+      type={type}
+      value={value}
+      loading={loading}
+      size={size}
+      {...rest}
     >
       {children}
-    </button>
+    </StyledButton>
   )
 }
 
