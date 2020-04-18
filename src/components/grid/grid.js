@@ -1,7 +1,7 @@
 import React from "react"
-import clsx from "clsx"
-import styles from "./grid.module.scss"
+
+import { StyledGrid } from "./grid.styled"
 
 export function Grid({ children }) {
-  return <div className={clsx(styles.grid)}>{children}</div>
+  return <StyledGrid>{children}</StyledGrid>
 }

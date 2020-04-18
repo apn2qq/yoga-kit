@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { Button } from "components/button"
+
 import { Grid } from "components/grid"
 import { Col } from "components/grid"
 import { ThemeProvider } from "styled-components"
@@ -12,7 +12,7 @@ import { Button } from "components/button"
 function App() {
   return (
     <>
-      <Button>Я обычная кнопка</Button>
+      <Button size={"small"}>Я обычная кнопка</Button>
       <Grid>
         <Col col={8} lg={12}>
           Первая карточка
@@ -26,7 +26,6 @@ function App() {
       </Grid>
     </>
   )
-  return <Button size="small">Testove button</Button>
 }
 
 ReactDOM.render(
