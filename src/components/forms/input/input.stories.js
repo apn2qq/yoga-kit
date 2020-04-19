@@ -1,7 +1,7 @@
 import React from "react"
 import { withKnobs, text, select } from "@storybook/addon-knobs"
 
-import { Input } from "src/components/input"
+import { Input } from "./input"
 
 export function Basic() {
   const skinSelector = {
