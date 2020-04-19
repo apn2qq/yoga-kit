@@ -10,11 +10,6 @@ export const StyledButton = styled.button`
     opacity: 0.8;
   }
 
-  &:focus,
-  &:active {
-    outline-color: currentcolor;
-  }
-
   ${({ size }) =>
     size === "small" &&
     css`

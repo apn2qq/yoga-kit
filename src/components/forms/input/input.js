@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import { StyledInput } from "./input.styled"
 
-export function Input({ skin = "primary", type, placeholder, name, id, transparent, ...rest }) {
+export function Input({ skin = "primary", type = "text", placeholder, name, id, ...rest }) {
   return (
     <StyledInput
       skin={skin}
@@ -11,13 +11,13 @@ export function Input({ skin = "primary", type, placeholder, name, id, transpare
       placeholder={placeholder}
       name={name}
       id={id}
-      transparent={transparent}
       {...rest}
     ></StyledInput>
   )
 }
 
 Input.propTypes = {
+  skin: PropTypes.string,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   name: PropTypes.string,

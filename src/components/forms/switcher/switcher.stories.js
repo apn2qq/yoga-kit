@@ -3,7 +3,7 @@ import { withKnobs, select } from "@storybook/addon-knobs"
 
 import { Switcher } from "./switcher"
 
-export function Basic() {
+export function Default() {
   const sizeSelector = {
     label: "Size",
     options: {
@@ -21,6 +21,6 @@ export function Basic() {
 }
 
 export default {
-  title: "Switcher",
+  title: "Forms/Switcher",
   decorators: [withKnobs],
 }

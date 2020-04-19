@@ -38,4 +38,5 @@ Button.propTypes = {
   value: PropTypes.string,
   loading: PropTypes.bool,
   size: PropTypes.string,
+  skin: PropTypes.string,
 }

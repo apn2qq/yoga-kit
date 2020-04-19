@@ -3,7 +3,7 @@ import { withKnobs, text, select } from "@storybook/addon-knobs"
 
 import { Input } from "./input"
 
-export function Basic() {
+export function Default() {
   const skinSelector = {
     label: "Skin",
     options: {
@@ -23,6 +23,6 @@ export function Basic() {
 }
 
 export default {
-  title: "Input",
+  title: "Forms/Input",
   decorators: [withKnobs],
 }

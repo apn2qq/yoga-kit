@@ -7,6 +7,7 @@ export function Switcher({ name, id, checked = false, size = "small", ...rest })
   const ref = useRef()
   const [isChecked, setIsChecked] = useState(checked)
 
+  // TODO: Set change function from parent component
   function handleChange() {
     setIsChecked(ref.current.checked)
   }
@@ -30,4 +31,5 @@ Switcher.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   checked: PropTypes.bool,
+  size: PropTypes.string,
 }

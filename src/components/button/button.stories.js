@@ -3,7 +3,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs"
 
 import { Button } from "./button"
 
-export function Basic() {
+export function Default() {
   const sizeSelector = {
     label: "Size",
     options: {
